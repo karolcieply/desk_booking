@@ -1,0 +1,20 @@
+{% extends 'desk_booking/base.html' %} {% block content %}
+<div class="container">
+  <h1 class="text-center mt-4 mb-5">Rejestrowanie stanowisk</h1>
+  <p class="text-center">Witamy w aplikacji do rejestracji stanowisk</p>
+  <div class="d-flex justify-content-center">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{form.as_p}}
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-dark" style="width: 100px; margin: 10px">
+          Zaloguj
+        </button>
+        <button type="submit" class="btn btn-dark" style="width: 100px; margin: 10px">
+          Zarejestruj
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
