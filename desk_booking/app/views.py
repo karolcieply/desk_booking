@@ -10,3 +10,10 @@ def index(request):
     }
     template = loader.get_template('desk_booking/index.html')
     return HttpResponse(template.render(context, request))
+
+def login(request):
+    context = {
+        'test': list(range(0,5)),
+    }
+    template = loader.get_template('desk_booking/login.html')
+    return HttpResponse(template.render(context, request))
