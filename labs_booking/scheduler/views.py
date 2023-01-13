@@ -15,7 +15,7 @@ from django.views.generic import (
 
 from labs_booking.scheduler.forms import IssuesForm, SessionForm
 from labs_booking.scheduler.models import Session
-from labs_booking.users.models import Teacher
+from labs_booking.users.models import Lab
 
 
 def generate_daylist():
@@ -25,11 +25,11 @@ def generate_daylist():
         day = {}
         curr_day = today + datetime.timedelta(days=i)
         weekday = curr_day.strftime("%A").upper()
-        teacher = Teacher.objects.filter(assigned_day=weekday).first()
+        lab = Lab.objects.filter(assigned_day=weekday).first()
         day["date"] = str(curr_day)
         day["day"] = weekday
-        #day["onduty"] = teacher.get_name()
-        #day["dept"] = teacher.dept
+        #day["onduty"] = lab.get_name()
+        #day["dept"] = lab.dept
         day["A_booked"] = (
             Session.objects.filter(date=str(curr_day)).filter(timeblock="A").exists()
         )

@@ -21,7 +21,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         context = super(UserDetailView, self).get_context_data(**kwargs)
         context[
             "user_group"
-        ] = "Student"  # "Teacher" if user.groups.filter(name="teacher") else "Student",
+        ] = "Student"  # "Lab" if user.groups.filter(name="lab") else "Student",
         context[
             "user_sessions"
         ] = Session.objects.all()  # Session.objects.filter(student=user)
@@ -66,9 +66,9 @@ user_redirect_view = UserRedirectView.as_view()
 # def profile(request):
 #     user = request.user
 #     context = {
-#         "user_group": "Teacher" if user.groups.filter(name="teacher") else "Student",
+#         "user_group": "Lab" if user.groups.filter(name="lab") else "Student",
 #         "user_sessions": Session.objects.filter(student=user),
-#         "teacher": "",
+#         "lab": "",
 #         "teacher_sessions": Session.objects.all(),
 #     }
 #     return render(request, "users/profile.html", context)

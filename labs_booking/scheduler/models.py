@@ -52,14 +52,14 @@ class Session(models.Model):
 # REF: READ https://docs.djangoproject.com/en/4.0/topics/db/models/
 class DayBlock(models.Model):
     date = models.DateField(default=timezone.now)
-    # onduty = models.OneToOneField(Teacher, on_delete=models.CASCADE, default="")
+    # onduty = models.OneToOneField(Lab, on_delete=models.CASCADE, default="")
     # allBlocks = Session.objects.filter(date=date)
     # blockA = allBlocks.filter(timeblo)
-    # blockB = models.OneToOneField(Teacher, on_delete=models.CASCADE, default='')
-    # blockC = models.OneToOneField(Teacher, on_delete=models.CASCADE, default='')
-    # blockD = models.OneToOneField(Teacher, on_delete=models.CASCADE, default='')
-    # blockE = models.OneToOneField(Teacher, on_delete=models.CASCADE, default='')
-    # blockF = models.OneToOneField(Teacher, on_delete=models.CASCADE, default='')
+    # blockB = models.OneToOneField(Lab, on_delete=models.CASCADE, default='')
+    # blockC = models.OneToOneField(Lab, on_delete=models.CASCADE, default='')
+    # blockD = models.OneToOneField(Lab, on_delete=models.CASCADE, default='')
+    # blockE = models.OneToOneField(Lab, on_delete=models.CASCADE, default='')
+    # blockF = models.OneToOneField(Lab, on_delete=models.CASCADE, default='')
 
 
 class Issue(models.Model):

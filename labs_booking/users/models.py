@@ -23,7 +23,7 @@ class User(AbstractUser):
         return reverse("users:detail", kwargs={"username": self.username})
 
 
-class Teacher(models.Model):
+class Lab(models.Model):
     WEEKDAY_CHOICES = (
         ("MONDAY", "Monday"),
         ("TUESDAY", "Tuesday"),
@@ -34,7 +34,7 @@ class Teacher(models.Model):
         ("SUNDAY", "Sunday"),
     )
 
-    teacher = models.ForeignKey(User, on_delete=models.CASCADE)
+    lab = models.ForeignKey(User, on_delete=models.CASCADE)
     dept = models.CharField(max_length=100)
     assigned_day = models.CharField(
         max_length=10, choices=WEEKDAY_CHOICES, default="MONDAY"
@@ -44,4 +44,4 @@ class Teacher(models.Model):
         return self.assigned_day
 
     def get_name(self):
-        return self.teacher.first_name + " " + self.teacher.last_name
+        return self.lab.first_name + " " + self.lab.last_name

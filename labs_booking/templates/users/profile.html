@@ -41,7 +41,7 @@
     <a href="{% url 'editprofile' %}">Edit my profile</a>
 </div>
 
-{% if user|has_group:"teacher" %}
+{% if user|has_group:"lab" %}
 <div class="content-section">
     <h3>All Sessions</h3>
     {% for session in teacher_sessions %}
