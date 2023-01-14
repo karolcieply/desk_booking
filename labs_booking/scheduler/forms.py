@@ -17,13 +17,13 @@ class SessionForm(forms.ModelForm):
     date = forms.DateField(disabled=False)
     # timeblock = forms.CharField(disabled=True)
     #course_name = forms.CharField(
-    #    widget=forms.TextInput(attrs={"placeholder": "i.e. Piramidy Finansowe"}), required=False
+    #    widget=forms.TextInput(attrs={"placeholder": "i.e. "}), required=False
     #)
     course_teacher = forms.CharField(
-        widget=forms.TextInput(attrs={"placeholder": "i.e. aRkadiusz Banasik"}), required=False
+        widget=forms.TextInput(attrs={"placeholder": "i.e. "}), required=False
     )
     helptype = forms.CharField(
-        widget=forms.TextInput(attrs={"placeholder": "i.e. Tomasz Barnaś"}), required=False
+        widget=forms.TextInput(attrs={"placeholder": "i.e. "}), required=False
     )
 
     class Meta:
