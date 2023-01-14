@@ -12,12 +12,25 @@ User = settings.AUTH_USER_MODEL
 class Session(models.Model):
 
     TIMEBLOCK_CHOICES = (
-        ("A", "8:00-8:20"),
-        ("B", "8:20-8:40"),
-        ("C", "8:40-9:00"),
-        ("D", "9:00-9:20"),
-        ("E", "9:20-9:40"),
-        ("F", "9:40-10:00"),
+        ("A", "8:00-9:00"),
+        ("B", "9:00-10:00"),
+        ("C", "10:00-11:00"),
+        ("D", "11:00-12:00"),
+        ("E", "12:00-13:00"),
+        ("F", "13:00-14:00"),
+        ("G", "14:00-15:00"),
+        ("H", "15:00-16:00"),
+        ("I", "16:00-17:00"),
+        ("J", "17:00-18:00"),
+        ("K", "18:00-19:00"),
+        ("L", "19:00-20:00"),
+    )
+
+    LABS = (
+        ("A","Lab workstation1"),
+        ("B","Lab workstation2"),
+        ("C","Lab workstation3"),
+        ("D","Lab workstation4")
     )
 
     student = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -25,7 +38,7 @@ class Session(models.Model):
     date = models.DateField(default=timezone.now)
     timeblock = models.CharField(max_length=10, choices=TIMEBLOCK_CHOICES, default="A")
 
-    course_name = models.CharField(max_length=30, default="")
+    course_name = models.CharField(max_length=30, choices=LABS, default="A")
     course_teacher = models.CharField(max_length=30, default="")
     helptype = models.CharField(max_length=50, default="")
 

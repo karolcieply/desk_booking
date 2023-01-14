@@ -16,9 +16,9 @@ class IssuesForm(forms.ModelForm):
 class SessionForm(forms.ModelForm):
     date = forms.DateField(disabled=False)
     # timeblock = forms.CharField(disabled=True)
-    course_name = forms.CharField(
-        widget=forms.TextInput(attrs={"placeholder": "i.e. Piramidy Finansowe"}), required=False
-    )
+    #course_name = forms.CharField(
+    #    widget=forms.TextInput(attrs={"placeholder": "i.e. Piramidy Finansowe"}), required=False
+    #)
     course_teacher = forms.CharField(
         widget=forms.TextInput(attrs={"placeholder": "i.e. aRkadiusz Banasik"}), required=False
     )
