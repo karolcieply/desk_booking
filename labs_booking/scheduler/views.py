@@ -96,8 +96,9 @@ class SessionEditView(
 ):
     model = Session
     fields = ["course_name", "course_teacher", "helptype"]
+    # fields = ["course_teacher", "helptype"]
     # success_url = "/users/<str:username>/"
-    success_message = "Session was updated successfully"
+    success_message = "Reservation was updated successfully"
 
     def form_valid(self, form):
         form.instance.student = self.request.user

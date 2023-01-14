@@ -43,6 +43,6 @@ class SessionFactory(DjangoModelFactory):
     date_posted = datetime.datetime.now()
     date = datetime.date.today()
     timeblock = "A"
-    course_name = Faker("company")
+    # course_name = Faker("company")
     course_teacher = Faker("name")
     helptype = Faker("bs")

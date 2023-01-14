@@ -29,6 +29,7 @@ class SessionForm(forms.ModelForm):
     class Meta:
         model = Session
         fields = ["date", "timeblock", "course_name", "course_teacher", "helptype"]
+        # fields = ["date", "timeblock", "course_teacher", "helptype"]        
 
     # REF: https://stackoverflow.com/questions/23690450/django-prevent-duplicates-for-users
     # def clean(self):

@@ -43,7 +43,7 @@
 
 {% if user|has_group:"lab" %}
 <div class="content-section">
-    <h3>All Sessions</h3>
+    <h3>All Reservations</h3>
     {% for session in teacher_sessions %}
     <article class="media content-section">
         <img class='rounded-circle article-img' src="{{ session.student.profile.image.url }}">
@@ -60,7 +60,7 @@
 </div>
 {% else %}
 <div class="content-section">
-    <h3>Upcoming Sessions</h3>
+    <h3>Upcoming Reservations</h3>
     {% for session in user_sessions %}
     {% if session.is_upcoming %}
     <div class="card bg-light mb-3" style="width: 18rem;">
@@ -81,7 +81,7 @@
     {% endif %}
     {% endfor %}
 
-    <h3>Past Sessions</h3>
+    <h3>Past Reservations</h3>
     {% for session in user_sessions %}
     {% if session.is_upcoming is False %}
     <div class="card border-dark mb-3" style="width: 18rem;">
