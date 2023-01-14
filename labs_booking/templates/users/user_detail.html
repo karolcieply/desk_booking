@@ -8,7 +8,7 @@
 <div class="content-section">
   <h2>My Profile</h2>
   <div class="media">
-    <img class="rounded-circle account-img" src="{% static 'images/profilepic.jpg' %}">
+    <img class="rounded-circle account-img" src="{% static 'images/profilepic.png' %}">
       <div class="media-body">
           <h2 class="account-heading">{{ object.username }}</h2>
           <p class="text-secondary">{{ user_group }}</p>
@@ -27,8 +27,8 @@
       <div class="card-header">{{ session.date|date:"F d, l" }}</div>
       <div class="card-body">
           <h5 class="card-title">{{ session.get_timeblock_display }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ session.course_name }} ({{ session.course_teacher }})</h6>
-          <p class="card-text">{{ session.helptype }}</p>
+          <h6 class="card-subtitle mb-2 text-muted">{{ session.lab_workstation }} ({{ session.operator_licence }})</h6>
+          <p class="card-text">{{ session.additional_info }}</p>
           <a class='btn btn-outline-secondary btn-small mt-1 mb-1' href="{% url 'session-edit' session.id %}">Edit</a>
           <a class='btn btn-outline-danger btn-small mt-1 mb-1'
               href="{% url 'session-cancel' session.id %}">Cancel</a>
@@ -44,8 +44,8 @@
       <div class="card-header">{{ session.date|date:"F d, l" }}</div>
       <div class="card-body text-dark">
           <h5 class="card-title">{{ session.get_timeblock_display }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ session.course_name }} ({{ session.course_teacher }})</h6>
-          <p class="card-text">{{ session.helptype }}</p>
+          <h6 class="card-subtitle mb-2 text-muted">{{ session.lab_workstation }} ({{ session.operator_licence }})</h6>
+          <p class="card-text">{{ session.additional_info }}</p>
       </div>
   </div>
   {% endif %}

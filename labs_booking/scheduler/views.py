@@ -68,7 +68,7 @@ class SessionDetailView(DetailView):
 # note: mixins should come before CreateView
 class SessionCreateView(LoginRequiredMixin, CreateView):
     # model = Session
-    # fields = ["date", "timeblock", "course_name", "course_teacher", "helptype"]
+    # fields = ["date", "timeblock", "lab_workstation", "operator_licence", "additional_info"]
     form_class = SessionForm
     template_name = "scheduler/session_form.html"
 
@@ -95,8 +95,8 @@ class SessionEditView(
     SuccessMessageMixin, LoginRequiredMixin, UserPassesTestMixin, UpdateView
 ):
     model = Session
-    fields = ["course_name", "course_teacher", "helptype"]
-    # fields = ["course_teacher", "helptype"]
+    fields = ["lab_workstation", "operator_licence", "additional_info"]
+    # fields = ["operator_licence", "additional_info"]
     # success_url = "/users/<str:username>/"
     success_message = "Reservation was updated successfully"
 

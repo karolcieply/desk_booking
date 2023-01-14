@@ -27,10 +27,10 @@ class Session(models.Model):
     )
 
     LABS = (
-        ("A","Lab workstation1"),
-        ("B","Lab workstation2"),
-        ("C","Lab workstation3"),
-        ("D","Lab workstation4")
+        ("Quantum Computing Workstation","Quantum Computing Workstation"),
+        ("X-ray Diffraction Workstation","X-ray Diffraction Workstation"),
+        ("Nuclear Magnetic Resonance Workstation","Nuclear Magnetic Resonance Workstation"),
+        ("Particle Accelerator Workstation","Particle Accelerator Workstation")
     )
 
     student = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -38,9 +38,9 @@ class Session(models.Model):
     date = models.DateField(default=timezone.now)
     timeblock = models.CharField(max_length=10, choices=TIMEBLOCK_CHOICES, default="A")
 
-    course_name = models.CharField(max_length=30, choices=LABS, default="A")
-    course_teacher = models.CharField(max_length=30, default="")
-    helptype = models.CharField(max_length=50, default="")
+    lab_workstation = models.CharField(max_length=40, choices=LABS, default="A")
+    operator_licence = models.CharField(max_length=30, default="")
+    additional_info = models.CharField(max_length=50, default="")
 
     # @property
     def is_upcoming(self):
